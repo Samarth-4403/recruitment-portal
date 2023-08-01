@@ -57,7 +57,11 @@ function App() {
                 </a>
               </div>
               <div className="col-lg-6">
-                {/* Add an image or video here to showcase your brand */}
+              <img
+                  src="/1.png" 
+                  alt="Talentsphere Logo"
+                  className="img-fluid rounded-circle"
+              />
               </div>
             </div>
           </div>
@@ -67,10 +71,20 @@ function App() {
           <div className="container">
             <div className="row">
               <div className="col-lg-6">
-                {/* Add some content about your startup */}
+                <h2 className="section-title">About Talentsphere</h2>
+                <p>
+                  Talentsphere is a leading recruitment startup that connects
+                  top companies with highly skilled professionals in the tech
+                  industry. Our mission is to empower businesses to hire the
+                  right talent and help job seekers find their dream roles.
+                </p>
               </div>
               <div className="col-lg-6">
-                {/* Add an image or video related to your startup */}
+                <img
+                  src="1.png"
+                  alt="About Talentsphere"
+                  className="img-fluid rounded"
+                />
               </div>
             </div>
           </div>
@@ -81,13 +95,45 @@ function App() {
             <h2 className="section-title">Our Services</h2>
             <div className="row">
               <div className="col-lg-4">
-                {/* Add service 1 */}
+                <div className="service-card">
+                  <img
+                    src="/2.jpg"
+                    alt="Service 1"
+                    className="img-fluid rounded"
+                  />
+                  <h3>Software Engineering</h3>
+                  <p>
+                    Find talented software engineers who can turn your ideas
+                    into reality.
+                  </p>
+                </div>
               </div>
               <div className="col-lg-4">
-                {/* Add service 2 */}
+                <div className="service-card">
+                  <img
+                    src="/3.jpg"
+                    alt="Service 2"
+                    className="img-fluid rounded"
+                  />
+                  <h3>Product Management</h3>
+                  <p>
+                    Discover visionary product managers to lead your product
+                    development.
+                  </p>
+                </div>
               </div>
               <div className="col-lg-4">
-                {/* Add service 3 */}
+                <div className="service-card">
+                  <img
+                    src="/4.jpg"
+                    alt="Service 3"
+                    className="img-fluid rounded"
+                  />
+                  <h3>Data Science</h3>
+                  <p>
+                    Unlock the potential of data with skilled data scientists.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -98,10 +144,14 @@ function App() {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              {/* Add footer content */}
+              <p>&copy; {new Date().getFullYear()} Talentsphere. All rights reserved.</p>
             </div>
             <div className="col-lg-6">
-              {/* Add social media links or any other relevant information */}
+              <ul className="social-links">
+                <li><a href="#"><i className="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i className="fab fa-instagram"></i></a></li>
+              </ul>
             </div>
           </div>
         </div>
