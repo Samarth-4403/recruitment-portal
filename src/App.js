@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import FeaturedCompaniesSection from './FeaturedCompaniesSection';
 
 function App() {
   return (
@@ -138,6 +139,22 @@ function App() {
             </div>
           </div>
         </section>
+
+        <section className="featured-companies-section">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <h2 className="section-title">Top Companies on TalentSphere</h2>
+                <div className="featured-companies-list">
+                  <div className="featured-company-banner">
+                    <img src="./5.png" alt="Company 1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       <footer className="footer">
