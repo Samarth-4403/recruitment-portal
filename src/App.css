@@ -1,41 +1,67 @@
-.about {
-  text-align: center; /* Center the content within the section */
-  padding: 60px 20px;
-}
-
-.about p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif; /* Use the chosen font here */
+/* Reset default margin and padding for all elements */
+* {
   margin: 0;
   padding: 0;
-  background-color: #fff; /* White background */
+  box-sizing: border-box;
+}
+
+/* Apply a default font and background color to the body */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f9f9f9;
   color: #333;
 }
 
+/* Header styles */
 .header {
   background-color: #007bff; /* Blue */
   padding: 10px;
   border-bottom: 1px solid #0056b3; /* Darker blue */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header .navbar-brand {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
-  color: #7e7d7d;
+  color: #8f8a8a;
+  text-decoration: none;
 }
 
+.header .navbar-nav {
+  list-style: none;
+  display: flex;
+}
+
+.header .nav-item {
+  margin-right: 20px;
+}
+
+.header .nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 12px; 
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.header .nav-link:hover {
+  color: #00adb5; 
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero styles */
 .hero {
   position: relative;
   background-color: #007bff; /* Blue */
-  padding: 80px 20px 20px 20px;
+  padding: 100px 20px;
   text-align: center;
   color: #fff;
-  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .hero::before {
@@ -44,39 +70,19 @@ body {
   top: 0;
   left: 0;
   bottom: auto;
-  width: 60%;
-  height: 60%; 
+  width: 100%;
+  height: 100%;
   z-index: -1;
   background: linear-gradient(-45deg, #007bff, #00adb5, #007bff); /* Blue, Light blue, Blue */
   background-size: 400% 400%;
   animation: animateGradientBackground 10s linear infinite;
 }
 
-@keyframes animateGradientBackground {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
-}
-
-.hero-title,
-.hero-description {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Main styles */
 .main {
-  margin-top: 30px;
+  margin: 30px auto;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
 .section-title {
@@ -85,36 +91,54 @@ body {
   margin-bottom: 30px;
 }
 
-.services {
-  padding: 60px 0;
-  background-color: #f9f9f9; /* Light grey */
-  color: #333;
+/* About section styles */
+.about {
+  text-align: center;
+  padding: 60px 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #f9f9f9;
 }
 
-.services .col-lg-4 {
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Services section styles */
+.services {
+  padding: 60px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #f9f9f9;
+}
+
+.services .row {
   display: flex;
-  align-items: stretch;
-  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .service-card {
-  flex: 1;
+  flex: 0 0 calc(33.333% - 20px);
+  margin: 10px;
   padding: 20px;
-  background-color: #fff; /* White */
-  border: 1px solid #dcdcdc; /* Light grey */
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
   border-radius: 5px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  transition: box-shadow 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #fff;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s forwards, cardFadeInDelay 0.2s ease-in-out forwards;
-  transition: box-shadow 0.3s;
-}
-
-.service-card:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  transform: translateY(-5px);
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .service-card h3 {
@@ -124,15 +148,21 @@ body {
 }
 
 .service-card p {
-  flex-grow: 1;
+  font-size: 16px;
 }
 
-.service-image {
+.service-card img {
   max-width: 100%;
   height: auto;
   margin-bottom: 15px;
 }
 
+.service-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Footer styles */
 .footer {
   background-color: #007bff; /* Blue */
   padding: 20px 0;
@@ -171,23 +201,17 @@ body {
   color: #00adb5; /* Light blue */
 }
 
-@keyframes cardFadeInDelay {
+@keyframes animateGradientBackground {
   0% {
-    opacity: 0;
-    transform: translateY(20px);
+    background-position: 0 0;
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
+    background-position: 100% 100%;
   }
 }
 
-@keyframes footerFadeInDelay {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
+@keyframes fadeInUp {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
